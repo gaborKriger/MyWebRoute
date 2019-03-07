@@ -1,6 +1,17 @@
+import static HttpMethod.HttpMethod.POST;
+
 public class Routes {
-    public String test1;
-    public String test2;
 
+    @WebRoute(path = "/test1")
+    public String onTest1()  {
+        // Here goes the code to handle all requests going to localhost:8000/test
+        // and to return something
 
+        return "This is the test1 response!";
+    }
+
+    @WebRoute(path = "/test2", method = POST)
+    public String onTest2()  {
+        return "This is the test2 response!";
+    }
 }
