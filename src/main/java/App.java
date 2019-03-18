@@ -25,7 +25,9 @@ public class App {
             for (Method method : Routes.class.getMethods()) {
                 if (method.isAnnotationPresent(WebRoute.class)) {
                     String path = method.getAnnotation(WebRoute.class).path();
-                    if (path.equals(httpExchange.getRequestURI().getPath())) {
+                    String requestMethod = method.getAnnotation(WebRoute.class).method().toString();
+                    if (path.equals(httpExchange.getRequestURI().getPath()) &
+                            requestMethod.equals(httpExchange.getRequestMethod())) {
                         try {
                             response = (String) method.invoke(new Routes());
                         } catch (IllegalAccessException | InvocationTargetException e) {

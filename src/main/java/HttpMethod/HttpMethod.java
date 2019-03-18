@@ -2,5 +2,7 @@ package HttpMethod;
 
 public enum HttpMethod {
     GET,
-    POST
+    POST,
+    PUT,
+    DELETE
 }

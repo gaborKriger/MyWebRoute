@@ -12,7 +12,7 @@ public class Routes {
 
     @WebRoute(path = "/test2", method = POST)
     public String onTest2()  {
-        return null;
+        return "This is the test2 response!";
     }
 
     @WebRoute(path = "/test3", method = GET)
